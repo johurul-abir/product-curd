@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <div class="card shadow">
+          <div class="card-body">
+            <div class="table">
+              
+              <a href="/"> <button class="btn btn-sm btn btn-primary mb-4"> Back </button> </a>
+  
+              <form action="/update/<%= product.id %>" class="border " enctype="multipart/form-data" method="POST">
+  
+                  <div class="my-3">
+                      <label for="" style="background: transparent;">Porduct Name</label>
+                      <input type="text" name="name" class="form-control" value="<%=product.name %>">
+                  </div>
+  
+                  <div class="my-3">
+                      <label for="" style="background: transparent;"> RegulerPrice</label>
+                      <input type="text" name="regulerPrice" class="form-control" value="<%=product.regulerPrice %>">
+                  </div>
+  
+                  <div class="my-3">
+                      <label for="" style="background: transparent;"> SalePrice</label>
+                      <input type="text" name="salePrice" class="form-control" value="<%=product.salePrice %>">
+                  </div>
+  
+                  <div class="my-3">
+                      <label for="" style="background: transparent;"> Color</label>
+                      <input type="text" name ="color" class="form-control" value="<%=product.color %>">
+                  </div>
+  
+                  <div class="my-3">
+                      <label for="" style="background: transparent;"> Stock</label>
+                      <input type="text" name ="stock" class="form-control" value="<%=product.stock %>">
+                  </div>
+                  
+                  <div class="my-3"
+                    <img src="/product/<%=product.photo %>" alt="" class="w-100">
+                  </div>
+
+                  <div class="my-3">
+                      <label for="" style="background: transparent;"> Photo</label>
+                      <input type="file" name ="productPhoto" class="form-control">
+                  </div>
+  
+                  <div class="my-3">
+                    <button type="submit" class="btn btn-primary" >Add Product</button>
+                </div>
+  
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

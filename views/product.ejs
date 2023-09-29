@@ -1,0 +1,64 @@
+
+
+
+
+
+<!-- product table  -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-10">
+      <div class="card shadow">
+        <div class="card-body" style="overflow: hidden;">
+          <div class="table">
+            <a href="/create"> <button class="btn btn-sm btn btn-primary mb-4">Upload Product</button></a>
+            <table class="table table-striped border">
+              <thead>
+                <tr>
+                  <td>#</td>
+                  <td>Photo</td>
+                  <td>Name</td>
+                  <td>RegulerPrice</td>
+                  <td>SalePrice</td>
+                  <td>color</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody>
+
+                <% product.reverse().forEach((element, index) => { %>
+
+                  <tr style="vertical-align: middle;">
+                    <td> <%= index + 1 %> </td>
+                    <td><img src="/product/<%=element.photo %>" alt="" style="width: 50px;
+                      height: 50px;
+                      object-fit: cover;
+                      border-radius: 3px;"></td>
+                    <td><%= element.name %></td>
+                    <td> <%= element.regulerPrice %> </td>
+                    <td><%= element.salePrice %></td>
+                    <td><%= element.color %></td>
+                    <td>
+                      <a href="/single/<%=element.slug %>" class="btn btn-sm btn btn-primary"><i class="fa fa-eye"></i></a>
+                      <a href="/edit/<%= element.id %>" class="btn btn-sm btn btn-info"><i class="fa fa-edit"></i></a>
+                      <a href="/delete/<%= element.id %>" class="btn btn-sm btn btn-danger"><i class="fa fa-trash"></i></a> 
+                  </td>
+                  </tr>
+
+
+                <% }) %>
+               
+
+                
+
+
+          
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+

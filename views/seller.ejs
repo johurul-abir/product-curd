@@ -1,0 +1,56 @@
+<!-- add sellaer dashboard -->
+<div class="container my-5" >
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div class="card shadow">
+          <div class="card-body" style="overflow: hidden;">
+            <div class="card-header m-2">
+              <h2>New Seller</h2>
+            </div>
+            <a href="/"> <button class="btn btn-primary mb-4">back</button></a>
+            <a href="/addseller"> <button class="btn btn-info mb-4">Add Seller</button></a>
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Name </th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Location</th>
+                  <th>Product-type</th>
+                  <th>Photo</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% seller.reverse().forEach((item, index) => { %>
+                 
+                <tr style="vertical-align: middle;">
+                  <td><%= index + 1 %></td>  
+                  <td><%= item.name %> </td>
+                  <td><%= item.email %></td>
+                  <td><%= item.phone %></td>
+                  <td><%= item.location %></td>
+                  <td><%= item.product %></td>
+                  <td><img src="/seller/<%=item.photo%>" alt=""style="width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                    border-radius: 3px;">
+                    </td>
+                    <td>
+                      <a href="/singleseller/<%=item.id%>" class="btn btn-sm btn btn-primary"><i class="fa fa-eye"></i></a>
+                      <a href="" class="btn btn-sm btn btn-info"><i class="fa fa-edit"></i></a>
+                      <a href="" class="btn btn-sm btn btn-danger"><i class="fa fa-trash"></i></a>
+                    </td>
+                </tr>
+  
+                <% }) %>
+  
+  
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

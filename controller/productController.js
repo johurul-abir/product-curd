@@ -67,7 +67,7 @@ productData.push(product);
 fs.writeFileSync("db/product.json", JSON.stringify(productData));
 
 
-res.redirect("/")
+res.redirect("/");
 
 }
 

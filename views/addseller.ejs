@@ -1,0 +1,54 @@
+
+
+<!-- // add seller form// -->
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-body">
+                    <a href="/"><button class="btn btn-info">Back</button></a>
+                    <div class="cardhead">
+                        <h4>Add New seller</h4>
+                    </div>
+                    <form action="/addseller" enctype="multipart/form-data" method="POST">
+                        <div class="my-3">
+                            <label for="">Name</label>
+                            <input type="text" name="name" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">E-mail</label>
+                            <input type="text" name="email" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Phone</label>
+                            <input type="text" name="phone" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Location</label>
+                            <input type="text" name="location" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Product Type</label>
+                            <input type="text" name="product" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                            <label for="">Photo</label>
+                            <input type="file" name="sellerPhoto" class="form-control">
+                        </div>
+
+                        <div class="my-3">
+                             <input class="btn btn-success" type="submit" value="Add Now"> 
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

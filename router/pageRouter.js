@@ -1,5 +1,5 @@
 import express from "express";
-import {showProductPage, showProductCreatePage, showSingleProductPage, editProduct} from "../controller/pageController.js"
+import {showProductPage, showProductCreatePage, showSingleProductPage, editProduct, addSeller, showSeller,showSingleSellerPage } from "../controller/pageController.js"
 
 
 
@@ -13,7 +13,10 @@ const router = express.Router();
 router.get("/", showProductPage);
 router.get("/create", showProductCreatePage);
 router.get("/single/:slug", showSingleProductPage);
-router.get("/edit/:id", editProduct)
+router.get("/edit/:id", editProduct);
+router.get("/addseller", addSeller);
+router.get("/seller", showSeller);
+router.get("/singleseller/:id", showSingleSellerPage)
 
 
 

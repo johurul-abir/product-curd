@@ -1,5 +1,11 @@
 import fs from "fs"
-import {getRandomId} from "../helpers/helpers.js"
+import {getRandomId} from "../helpers/helpers.js";
+import { userMial } from "../mails/emai.js";
+// import nodemailer from "nodemailer"
+// import axios from "axios"
+// import dotenv from "dotenv";
+
+// dotenv.config();
 
 
 
@@ -19,7 +25,7 @@ export const uploadUserPhoto = (req, res) => {
     res.status(200).json(req.body);
 }
 
-
+// create seller
 export const addSellerConltroller = (req, res) => {
     const {name, email, phone, location, product} = req.body;
 
@@ -27,9 +33,9 @@ export const addSellerConltroller = (req, res) => {
     if( !name || !email || !phone ) {
         res.status(400).json({message: "name, phone and email are must be Require"});
         return;
+
     };
     
-
     const sellerData = JSON.parse(fs.readFileSync("db/seller.json").toString());
 
     const seller = {id:getRandomId(), name, email, phone, location, product, photo: req.file.filename};
@@ -38,8 +44,7 @@ export const addSellerConltroller = (req, res) => {
     
     fs.writeFileSync("db/seller.json", JSON.stringify(sellerData));
 
-
-
+   userMial(req, res);
 
     res.redirect("/seller");
 

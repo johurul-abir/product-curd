@@ -23,4 +23,12 @@
     slug = slug.replace(/\s+/g, '-');
   
     return slug;
-  }
+  };
+
+
+   export const creatAlert = (text, type ="danger") => {
+    return `<p class="alert alert-${type} d-flex justify-content-between">${text}
+    <button class="btn-close" data-bs-dismiss ="alert"> </button>
+  </p>`
+
+};

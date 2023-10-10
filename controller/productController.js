@@ -76,13 +76,18 @@ res.redirect("/");
 export const deletePorducts = (req, res) => {
     const { id } = req.params;
 
-    const productData = JSON.parse(fs.readFileSync("db/product.json").toString());
+        const productData = JSON.parse(fs.readFileSync("db/product.json").toString());
+        const deleteProduct = productData.filter((data) => data.id !== id);
+        
+    
+        fs.writeFileSync("db/product.json", JSON.stringify(deleteProduct));
+    
+        res.redirect("/");
 
-    const deleteProduct = productData.filter((data) => data.id !== id);
 
-    fs.writeFileSync("db/product.json", JSON.stringify(deleteProduct));
+    return;
 
-    res.redirect("/");
+  
 }
 
 
